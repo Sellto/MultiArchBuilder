@@ -3,17 +3,32 @@
   roles:
     - { role: pre-task}
 
-- hosts: all
-  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
-  roles:
-    - { role: build}
-
-- hosts: amd64
-  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
-  roles:
-    - {role: check}
-
-- hosts: experimental
-  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
-  roles:
-    - { role: manifest}
+- name:  Check available architecture
+  hosts: experimental
+  vars:
+    manifest_list: []
+  tasks:
+    - name : amd64
+      set_fact:
+        manifest_list : '{{manifest_list + ["{{username}}/{{image_name}}:amd64"] }}'
+      when : groups['amd64'] | list
+    - name : arm64
+      set_fact:
+        manifest_list : '{{manifest_list + ["{{username}}/{{image_name}}:arm64"] }}'
+      when : groups['arm64'] | list
+    - name : arm
+      set_fact:
+        manifest_list : '{{manifest_list + ["{{username}}/{{image_name}}:arm"] }}'
+      when : groups['arm'] | list
+    - name : ppc64le
+      set_fact:
+        manifest_list : '{{manifest_list + ["{{username}}/{{image_name}}:ppc64le"] }}'
+      when : groups['ppc64le'] | list
+    - name : s390x
+      set_fact:
+        manifest_list : '{{manifest_list + ["{{username}}/{{image_name}}:s390x"] }}'
+      when : groups['s390x'] | list
+    - name : Create image manifest
+      command : docker manifest create {{username}}/{{image_name}}:latest {% for arg in manifest_list %} "{{ arg }}" {% endfor %} --amend
+    - name : Push manifest
+      command :  docker manifest push {{username}}/{{image_name}}:latest

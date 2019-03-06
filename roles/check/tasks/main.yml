@@ -1,9 +1,0 @@
----
-- name : Checking 1/2
-  set_fact:
-    item: ["{{username}}/{{image_name}}:{{host_architecture}}"]
-
-- name : Checking 2/2
-  set_fact:
-    arch_list : "{{arch_list + item }}"
-    #arch_list: "{{username}}/{{image_name}}:{{host_architecture}}"

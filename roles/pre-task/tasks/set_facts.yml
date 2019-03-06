@@ -8,7 +8,7 @@
 
 - name: Initialize an empty list for present architecture
   set_fact:
-    arch_list: []
+    arch_list: "test"
 
 
 - name: Ansible architecture rename
