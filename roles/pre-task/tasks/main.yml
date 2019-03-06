@@ -1,0 +1,3 @@
+---
+- import_tasks: set_facts.yml
+- import_tasks: install.yml

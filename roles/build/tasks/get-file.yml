@@ -1,0 +1,10 @@
+---
+- name : Create tmp folder
+  file:
+    path: ~/tmp/
+    state: directory
+
+- name: Get Dockerfile from source
+  copy:
+    src:  ./files/{{ image_arch }}/Dockerfile
+    dest: ~/tmp/Dockerfile

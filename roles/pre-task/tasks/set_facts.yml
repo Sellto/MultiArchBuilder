@@ -1,0 +1,28 @@
+---
+- name : Translation of the architecture
+  set_fact:
+    architecture_groups:
+      x86_64  : amd64
+      aarch64 : arm64
+      armv7l  : arm
+
+- name: Initialize an empty list for present architecture
+  set_fact:
+    arch_list: []
+
+
+- name: Ansible architecture rename
+  set_fact:
+    host_architecture: >-
+      {%- if ansible_architecture in architecture_groups -%}
+      {{architecture_groups[ansible_architecture]}}
+      {%- else -%}
+       {{ansible_architecture}}
+      {% endif %}
+
+- name: Get docker account data
+  set_fact:
+    image_name : myname2
+    username   : selltom
+    password   : S3llt0m.d0ck3r
+    email      : selleslagh.tom@gmail.com

@@ -1,0 +1,3 @@
+---
+- name: Build localy each images
+  command: docker build -t {{username}}/{{image_name}}:{{image_arch}} ~/tmp/

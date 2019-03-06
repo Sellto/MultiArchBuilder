@@ -1,0 +1,8 @@
+---
+- name : Create image manifest
+  command : docker manifest create {{username}}/{{image_name}}:latest {% for arg in arch_list %} "{{ arg }}" {% endfor %} --amend
+  ignore_errors: True
+  register: results
+
+- name : Push manifest
+  command :  docker manifest push {{username}}/{{image_name}}:latest

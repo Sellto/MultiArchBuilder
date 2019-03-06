@@ -1,0 +1,10 @@
+---
+- name: Log into private registry and force re-authorization
+  docker_login:
+    email: "{{ email }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    reauthorize: yes
+
+- name: Push built image
+  command: docker push {{username}}/{{image_name}}:{{image_arch}}

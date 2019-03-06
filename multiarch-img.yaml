@@ -1,0 +1,19 @@
+- hosts: all
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+  roles:
+    - { role: pre-task}
+
+- hosts: all
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+  roles:
+    - { role: build}
+
+- hosts: amd64
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+  roles:
+    - {role: check}
+
+- hosts: experimental
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+  roles:
+    - { role: manifest}
