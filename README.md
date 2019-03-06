@@ -3,7 +3,9 @@
 
 
 ### Create sudo-user
-### Install docker 
+*Readme in progress*
+### Install docker
+*Readme in progress*
 #### add your sudo-user into docker group
 
 - fedora
@@ -16,6 +18,9 @@ newgrp docker
 sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
+#### Add to one device the experimental docker capabilities.
+*Readme in progress*
+
 ### Enable ssh and copy public key.
 ### Install python dependencies
 - fedora
@@ -29,5 +34,26 @@ sudo apt install python-pip
 pip install --upgrade setuptools
 ```
 
+## Playbook Configuration
+### Add your docker account information
+Replace commmented informations by yours
+in the file : /roles/pre-task/tasks/set_facts.yml
 
+```
+- name: Get docker account data
+  set_fact:
+    image_name : #imagename
+    username   : #yourdockerusername
+    password   : #yourpassward
+    email      : #youremail
+ ```   
+### Update your playbook inventory
+#### ALL section
+*Readme in progress*
+#### Experimental section
+*Readme in progress*
+#### Other section
+*Readme in progress*
 
+## Launch the playbook
+`ansible-playbook -i inventory/hosts.ini multiarch-img.yml`
