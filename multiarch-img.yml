@@ -1,9 +1,15 @@
+
 - hosts: all
   any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
   roles:
-    - { role: pre-task}
+    - { role: pre-task }
 
-- name:  Check available architecture
+- hosts: all
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+  roles:
+    - { role: build }
+
+- name: Create docker image manifest and push it
   hosts: experimental
   vars:
     manifest_list: []

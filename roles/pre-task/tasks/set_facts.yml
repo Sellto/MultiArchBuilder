@@ -22,7 +22,7 @@
 
 - name: Get docker account data
   set_fact:
-    image_name : myname2
-    username   : selltom
-    password   : S3llt0m.d0ck3r
-    email      : selleslagh.tom@gmail.com
+    image_name : #imagename
+    username   : #yourdockerusername
+    password   : #yourpassward
+    email      : #youremail

@@ -1,0 +1,20 @@
+[all]
+dev1_amd64             ansible_connection=local
+dev2_arm64             ansible_host=sudouser@machine_ip
+dev3-arm               ansible_host=sudouser@machine_ip
+
+[experimental]
+dev1_amd64
+
+[amd64]
+dev1_amd64
+
+[arm64]
+dev2_arm64
+
+[arm]
+dev3_arm
+
+[ppc64le]
+
+[s390x]
