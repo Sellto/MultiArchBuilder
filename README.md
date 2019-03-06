@@ -48,6 +48,8 @@ in the file : /roles/pre-task/tasks/set_facts.yml
     email      : #youremail
  ```   
 ### Update your playbook inventory
+Use the hosts.ini.sample file to create your host.ini inventory
+and place it into the inventory folder
 #### ALL section
 *Readme in progress*
 #### Experimental section
