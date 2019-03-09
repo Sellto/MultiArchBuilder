@@ -1,6 +1,13 @@
 ## Prerequisites
 *Thoses tasks must be do on every linux device*
-
+###Install Ansible
+- debian
+``` 
+sudo apt-get install software-properties-common dirmngr
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+```
 
 ### Create sudo-user
 *Readme in progress*
