@@ -1,7 +1,7 @@
 [all]
 dev1_amd64             ansible_connection=local
 dev2_arm64             ansible_host=sudouser@machine_ip
-dev3-arm               ansible_host=sudouser@machine_ip
+dev3_arm               ansible_host=sudouser@machine_ip
 
 [experimental]
 dev1_amd64
