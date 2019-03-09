@@ -6,5 +6,5 @@
 
 - name: Get Dockerfile from source
   copy:
-    src:  ./files/{{ image_arch }}/*
-    dest: ~/tmp/*
+    src:  ./files/{{ image_arch }}/
+    dest: ~/tmp
