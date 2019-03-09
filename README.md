@@ -3,13 +3,17 @@
 
 ### Install Ansible
 - debian
-``` 
-sudo apt-get install software-properties-common dirmngr
-sudo apt-add-repository ppa:ansible/ansible
+Add the following line to /etc/apt/sources.list:
+```
+deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
+```
+
+Then run these commands:
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 sudo apt-get update
 sudo apt-get install ansible
 ```
-
 ### Create sudo-user
 *Readme in progress*
 ### Install docker
