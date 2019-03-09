@@ -1,6 +1,7 @@
 ## Prerequisites
 *Thoses tasks must be do on every linux device*
-###Install Ansible
+
+### Install Ansible
 - debian
 ``` 
 sudo apt-get install software-properties-common dirmngr
