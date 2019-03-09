@@ -59,6 +59,7 @@ in the file : /roles/pre-task/tasks/set_facts.yml
     password   : #yourpassward
     email      : #youremail
  ```   
+ nb : the image name must be lowercase
 ### Update your playbook inventory
 Use the hosts.ini.sample file to create your host.ini inventory
 and place it into the inventory folder
